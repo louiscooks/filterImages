@@ -1,0 +1,55 @@
+.drag-n-drop {
+	display: flex;
+	width: 100%;
+	height: auto;
+	flex-wrap: wrap;
+}
+.dnd-item {
+	position: relative;
+	text-align: center;
+	border-radius: 1px;
+	width: 20%;
+	height: 360px;
+	margin: 0.2rem;
+	overflow: hidden;
+	flex-grow: 1;
+	z-index: 1000;
+}
+
+.dnd-item:not(:last-of-type) {
+	margin-bottom: 0.2rem;
+}
+
+.dnd-image {
+	height: 100%;
+	width: 100%;
+	z-index: 0;
+}
+.dnd-overlay {
+	display: none;
+	width: 100%;
+	height: 100%;
+	background-color: rgba(255, 255, 255, 0.521);
+}
+.dnd-text {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	font-size: 32px;
+}
+.show {
+	display: block;
+}
+/* tablet view */
+@media screen and (max-device-width: 1024px) {
+	.dnd-item {
+		width: calc(100% / 4);
+	}
+}
+/* phone view */
+@media screen and (max-device-width: 640px) {
+	.dnd-item {
+		width: 100%;
+	}
+}
